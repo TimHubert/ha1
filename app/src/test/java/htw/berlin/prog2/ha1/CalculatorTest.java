@@ -89,6 +89,24 @@ class CalculatorTest {
     }
 
 
-    //TODO hier weitere Tests erstellen
+    // Teilaufgabe 1
+    @Test
+    @DisplayName("Clear the screen after pressing the clear-key")
+    void testClearKey() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(3);
+        calc.pressBinaryOperationKey("x");
+        calc.pressDigitKey(2);
+        calc.pressEqualsKey();
+        calc.pressClearKey();
+
+        String expected = "0";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+    
+
 }
 
