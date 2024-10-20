@@ -138,5 +138,22 @@ class CalculatorTest {
 
     }
 
+    // Teilaufgabe 2 - Roter Test 2
+    @Test
+    @DisplayName("should display an Error after using the unary Operator '1/x' and dividing by zero")
+    void testDivisionByZeroOnUnaryOperator() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(0);
+        calc.pressBinaryOperationKey("1/x");
+
+
+        String expected = "Error";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
+
 }
 
