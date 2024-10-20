@@ -106,7 +106,37 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
-    
+
+
+
+    // Teilaufgabe 2 - Roter Test 1
+    @Test
+    @DisplayName("should display a decimal with a maximum of ten numbers and a dot")
+    void testMaximumOfNumbersAndDots() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(3);
+        calc.pressDotKey();
+        calc.pressDigitKey(3);
+        calc.pressDigitKey(3);
+        calc.pressDigitKey(3);
+        calc.pressDigitKey(3);
+        calc.pressDigitKey(3);
+        calc.pressDigitKey(3);
+        calc.pressDigitKey(3);
+        calc.pressDigitKey(3);
+        calc.pressDigitKey(3);
+        calc.pressDigitKey(3);
+        calc.pressDigitKey(3);
+
+
+        String expected = "3.333333333";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+
+
+    }
 
 }
 
