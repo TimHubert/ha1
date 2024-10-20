@@ -32,8 +32,8 @@ public class Calculator {
         if(digit > 9 || digit < 0) throw new IllegalArgumentException();
 
         if(screen.equals("0") || latestValue == Double.parseDouble(screen)) screen = "";
-
         screen = screen + digit;
+        if((screen.length() > 11) || (screen.length() > 10 && !screen.contains(".")))  screen = screen.substring(0, screen.length()-1);
     }
 
     /**
